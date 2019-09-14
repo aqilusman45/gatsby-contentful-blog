@@ -1,6 +1,10 @@
 
-exports.createPages = async ({ graphql, actions }) => {
+const path = require("path")
+const _ = require("lodash")
 
+
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
     const { data } = await graphql(`
     {
         allContentfulBlogPost {
